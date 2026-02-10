@@ -17,10 +17,10 @@ def test_divide():
 def test_division_prohibited():
     try:
         divide('A', 'B')
-        print('Test string-division false')
+        print('Test string division false')
         assert False
     except ValueError as err:
-        print('Test string-division passed')
+        print('Test string division passed')
 
 
 def test_divide_by_zero():
