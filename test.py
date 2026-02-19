@@ -1,5 +1,5 @@
 from script import sum, divide
-
+somevar1 = 1
 
 def test_sum():
     a = 1
