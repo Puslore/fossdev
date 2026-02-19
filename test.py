@@ -38,4 +38,4 @@ if __name__ == "__main__":
     test_divide()
     test_sum()
     test_divide_by_zero()
-    test_division_prohibition()
+    test_division_prohibited()
