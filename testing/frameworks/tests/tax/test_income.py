@@ -1,4 +1,4 @@
-from tax.income import calculate_tax
+from testing.frameworks.src.tax.income import calculate_tax
 
 
 def test_icome_tax():
