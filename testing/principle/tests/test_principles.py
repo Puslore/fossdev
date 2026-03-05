@@ -4,6 +4,16 @@
 
 
 # TODO make it with 'pip install -e . math_demo'
+# in project root dir after setup.py defined
+
+# Раннее тестирование позволяет сэкономить время позднее
+# Тесты показывают наличие ошибок, а не отсутсвие
+# Тесты не должны дублировать логику тестируемого кода
+# ----------------------------------------------------------------------
+# Тесты не должны использовать ВСЕ наборы входных параметров
+# Тесты должны покрывать "кластеры" входных параметров
+# Тесты должны обнаруживать новые ошибки (pescicide paradox)
+# Тесты покрывают как успешные, так и ошибочные кейсы
 
 
 from math_demo import (
@@ -19,6 +29,11 @@ def test_addition():
     print('Test ADDITION PASSED')
 
 
+def test_addition_duplicate():
+    assert add(6, 7) == 6 + 7
+    print('Test DUPLICATE ADDITION PASSED')
+
+
 def test_addition_with_bug():
     # Тесты показывают наличие ошибок, а не их отсутствие
     assert add_with_bug(2, 2) == 4
@@ -30,3 +45,4 @@ def test_addition_with_bug():
 if __name__ == "__main__":
     test_addition()
     test_addition_with_bug()
+    test_addition_duplicate()
