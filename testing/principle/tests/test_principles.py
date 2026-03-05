@@ -94,7 +94,16 @@ def test_addition_clusters():
     print('Test CLUSTERS PASSED')
 
 
-if __name__ == "__main__":
+def test_negative_income():
+    try:
+        calculate_tax(-100)
+        print('Test NEGATIVE INCOME FAILED')
+        
+    except ValueError as e:
+        print('Test NEGATIVE INCOME PASSED')
+
+
+if __name__ == '__main__':
     test_addition()
     test_addition_with_bug()
     test_addition_duplicate()
@@ -102,3 +111,4 @@ if __name__ == "__main__":
     test_addition_clusters()
     test_tax_calculator_pesticide()
     test_calculate_tax()
+    test_negative_income()
