@@ -17,12 +17,15 @@
 
 # Тесты должны покрывать "кластеры" входных параметров
 # Тесты должны обнаруживать новые ошибки (pescicide paradox)
+
 # Тесты покрывают как успешные, так и ошибочные кейсы
 
 
 from math_demo import (
     add,
-    add_with_bug
+    add_with_bug,
+    calculate_tax,
+    claculate_tax_bugged
 )
 
 
@@ -56,6 +59,29 @@ def test_addition_overkill():
     print('Test OVERKILL PASSED')
 
 
+def test_tax_calculator_pesticide():
+    assert claculate_tax_bugged(1000) == 150
+    assert claculate_tax_bugged(100) == 15
+    assert claculate_tax_bugged(10) == 1.5
+    assert claculate_tax_bugged(1) == 0.15
+    assert claculate_tax_bugged(234) == 35.1
+    print('Test TAX CALCULATOR PASSED')
+    # float may give us cases
+    # not available with using int
+    # assert claculate_tax_bugged(2.34) == 0.35
+
+
+
+def test_calculate_tax():
+    assert calculate_tax(1000) == 150
+    assert calculate_tax(100) == 15
+    assert calculate_tax(10) == 1.5
+    assert calculate_tax(1) == 0.15
+    assert calculate_tax(234) == 35.1
+    print('Test CALCULATE TAX PASSED')
+    assert calculate_tax(2.34) == 0.35
+
+
 def test_addition_clusters():
     assert add(7, 6) == 13
     assert add(0, 6) == 6
@@ -75,3 +101,5 @@ if __name__ == "__main__":
     test_addition_duplicate()
     # test_addition_overkill() # try it on your risk
     test_addition_clusters()
+    test_tax_calculator_pesticide()
+    test_calculate_tax()
