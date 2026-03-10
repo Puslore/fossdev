@@ -28,4 +28,4 @@ def calculate_ndfl(income: int | float) -> int | float:
             
             return result
     
-    raise RuntimeError(f'Error in tax calculation {income}')
+    raise RuntimeError(f'Error in tax calculation: {income}')
