@@ -11,4 +11,15 @@
 
 
 def calculate_ndfl(income: int | float) -> int | float:
-    return income * 0.13
+    result: int | float = 0
+    
+    if income <= 2_400_000:
+        result = income * 0.13
+        
+    elif income <= 5_000_000:
+        result = (
+            2_400_000 * 0.13 +
+            (income - 2_400_000) * 0.15
+        )
+
+    return result
