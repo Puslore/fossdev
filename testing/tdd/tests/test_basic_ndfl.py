@@ -20,4 +20,4 @@ def test_ndfl_tier_4_basic():
 
 
 def test_ndfl_tier_5_basic():
-    assert calculate_ndfl(60_000_000) == 13_602_000
+    assert calculate_ndfl(60_000_000) == 11_602_000
