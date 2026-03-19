@@ -7,8 +7,10 @@ create-structure:
 install-dep:
 	pip install -r requirements.txt
 
-install:
+install-e:
 	pip install -e .
 
 test-pytest:
 	python3 -m pytest
+
+test: install-dep install test-pytest
