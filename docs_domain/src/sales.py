@@ -1,6 +1,8 @@
 # TODO refactor this module using buisness logic names
+# import dataclasses
 
 
+# @dataclasses.dataclass
 class Sale:  # data class
     def __init__(
         self, product_name: str,
