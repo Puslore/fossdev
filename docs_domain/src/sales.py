@@ -8,10 +8,13 @@ class Sale:  # data class
         unit_price: float,
         quantity: int
     ):
-        self.product_name = product_name
-        self.category = category
-        self.unit_price = unit_price
-        self.quantity = quantity
+        try:
+            self.product_name = product_name
+            self.category = category
+            self.unit_price = unit_price
+            self.quantity = quantity
+        except ValueError as e:
+            raise ValueError(f'Invalid value in sale record: {e}')
 
 
 def _parse_record(line: str):
