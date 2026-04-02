@@ -17,7 +17,19 @@ class Sale:  # data class
             raise ValueError(f'Invalid value in sale record: {e}')
 
 
-def _parse_record(line: str):
+def _parse_record(line: str) -> dict | None:
+    '''
+    Parsing information for one sale
+    
+    Parameters:
+        line (str): string that contain sale record in form comma-separated values
+
+    Returns:
+        sale (dict[Sale] | None): sale information in form of dict
+    
+    Raises:
+        ValueError: if sale record is incorrect
+    '''
     sale_raw: list = line.strip().split(',')
     if len(sale_raw) != 4:  # according specs each sale is defined by four fields
         return None
