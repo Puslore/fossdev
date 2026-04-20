@@ -10,3 +10,7 @@ def divide(a, b):
     if isinstance(a, list) or isinstance(b, list):
         raise ValueError('Could not divide lists')
     return a / b
+
+
+
+somevar = 3
